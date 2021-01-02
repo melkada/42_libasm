@@ -5,17 +5,16 @@ global ft_strcpy
 ; rdi = dest & rsi = src
 
 ft_strcpy:
-	push rcx
-	mov rcx, 0
+	mov rax, 0
 
 ft_strcpy_engine:
-	cmp	[rsi + rcx], byte 0
+	mov	dl, byte [rsi + rax]
+	mov	byte [rdi + rax], dl
+	cmp	dl, 0
 	jz	ft_strcpy_end
-	mov	[rdi], [rsi]
-	inc	rcx
+	inc	rax
 	jmp	ft_strcpy_engine
 
 ft_strcpy_end:
 	mov	rax, rdi
-	pop	rcx
 	ret

@@ -1,13 +1,15 @@
 NAME = libasm.a
 HEADER = srcs/libasm.h
 
-CC = gcc
+CC = clang
 CFLAGS = -Wall -Werror -Wextra
 NASM = nasm
 NASMFLAGS = -f elf64
 
 SRCS = ./srcs/ft_strlen.s\
-       ./srcs/ft_strcpy.s
+       ./srcs/ft_strcpy.s\
+       ./srcs/ft_strcmp.s\
+       ./srcs/ft_strdup.s
 
 OBJS = $(SRCS:.s=.o)
 
@@ -19,7 +21,7 @@ $(NAME):	$(OBJS)
 			$(NASM) $(NASMFLAGS) $< -o $@
 clean:
 		rm -rf $(OBJS)
-fclean:
+fclean:		clean
 		rm -rf $(NAME) a.out
 re:		fclean all
 

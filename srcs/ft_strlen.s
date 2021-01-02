@@ -3,16 +3,13 @@ section .text
 global ft_strlen
 
 ft_strlen:
-	push	rcx
-	mov	rcx, 0
+	mov	rax, 0
 
 ft_strlen_engine:
-	cmp	[rdi + rcx], byte 0
-	jz	ft_strlen_end
-	inc	rcx
+	cmp	byte [rdi + rax], 0
+	je	ft_strlen_end
+	inc	rax
 	jmp	ft_strlen_engine
 
 ft_strlen_end:
-	mov	rax, rcx
-	pop	rcx
 	ret

@@ -1,9 +1,9 @@
+#include <stdio.h>
+#include "./srcs/libasm.h"
+
 int	main(void)
 {
-	char	dest[] = "";
-	char	src[] = "hello";
-
-	ft_strcpy(dest, src);
+	printf("Yo: %s", ft_strdup("okasa"));
 
 	return (0);
 }
