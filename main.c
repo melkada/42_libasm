@@ -1,10 +1,16 @@
 #include <stdio.h>
+#include <unistd.h>
 #include <errno.h>
+#include <fcntl.h>
 #include "./srcs/libasm.h"
 
 int	main(void)
 {
-	printf("%d", write(9, "He", 2));
-	printf("\n%d", errno);
+	char *buf;
+
+	int fd = open("./srcs/ft_read.s", O_RDONLY);
+
+	ft_read(fd, buf, 20000);
+	printf("%s", buf);
 	return (0);
 }

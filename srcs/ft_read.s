@@ -2,16 +2,16 @@ section .text
 
 extern __errno_location
 
-global ft_write
+global ft_read
 
-ft_write:
-	mov	rax, 1
+ft_read:
+	mov	rax, 0x0
 	syscall
 	cmp rax, 0
-	jl ft_write_err
+	jl ft_read_err
 	ret
 
-ft_write_err:
+ft_read_err:
 	neg rax
 	mov rdx, rax
 	call __errno_location

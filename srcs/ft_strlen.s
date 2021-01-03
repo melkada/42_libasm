@@ -3,7 +3,7 @@ section .text
 global ft_strlen
 
 ft_strlen:
-	mov	rax, 0 // rax = 0
+	mov	rax, 0
 
 ft_strlen_engine:
 	cmp	byte [rdi + rax], 0
