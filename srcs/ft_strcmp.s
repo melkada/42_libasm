@@ -2,6 +2,8 @@ section .text
 
 global	ft_strcmp
 
+; rdi = char *s1 | rsi = char *s2
+
 ft_strcmp:
 	mov	rax, 0
 
