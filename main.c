@@ -3,7 +3,6 @@
 
 int	main(void)
 {
-	printf("Yo: %s", ft_strdup("okasa"));
-
+	printf("Yo: %s", ft_strdup("As Salam Aleykum"));
 	return (0);
 }

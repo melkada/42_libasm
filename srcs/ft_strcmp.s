@@ -1,8 +1,6 @@
 section .text
 
-global ft_strcmp
-
-; rdi = s1 & rsi = s2
+global	ft_strcmp
 
 ft_strcmp:
 	mov	rax, 0
