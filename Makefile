@@ -1,5 +1,4 @@
 NAME = libasm.a
-HEADER = srcs/libasm.h
 
 CC = clang
 CFLAGS = -Wall -Werror -Wextra
@@ -20,12 +19,20 @@ all:		$(NAME)
 $(NAME):	$(OBJS)
 			@ar rcs $(NAME) $(OBJS)
 			@echo "----- Finished -----"
+
 %.o:		%.s
 			@$(NASM) $(NASMFLAGS) $< -o $@
+
+tests:		$(NAME)
+			@$(CC) $(CFLAGS) test.c $(NAME)
+			@./a.out
+
 clean:
-		@rm -rf $(OBJS)
+		@rm -rf $(OBJS) $(TEST_OBJS)
+
 fclean:		clean
 		@rm -rf $(NAME) a.out
+
 re:		fclean all
 
-.PHONY:		all clean fclean re
+.PHONY:		all clean fclean re tests
