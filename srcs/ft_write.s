@@ -5,7 +5,7 @@ extern __errno_location
 global ft_write
 
 ft_write:
-	mov	rax, 1
+	mov	rax, 0x1
 	syscall
 	cmp rax, 0
 	jl ft_write_err
